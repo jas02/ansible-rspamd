@@ -3,3 +3,8 @@
   apt_key:
     url: https://rspamd.com/apt-stable/gpg.key
     state: present
+
+- name: Add rspamd repository
+  apt_repository:
+    repo: deb http://rspamd.com/apt-stable/ xenial main
+    state: present
