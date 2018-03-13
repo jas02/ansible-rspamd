@@ -1,0 +1,5 @@
+---
+- name: Add an apt rspamd key
+  apt_key:
+    url: https://rspamd.com/apt-stable/gpg.key
+    state: present

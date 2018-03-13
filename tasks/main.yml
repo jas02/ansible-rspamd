@@ -1,2 +1,3 @@
 ---
-# tasks file for ansible-rspamd
+
+- import_tasks: add_repo.yml
