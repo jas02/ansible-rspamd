@@ -1,6 +1,6 @@
 ---
 - name: generate rspamd password
-  shell: /usr/bin/rspamd pw -p {{ rspamd_password }} | egrep '^\$'
+  shell: /usr/bin/rspamadm -p {{ rspamd_password }} | tail -n 1
   register: rspamd_controller_pass
 
 - name: debug password
