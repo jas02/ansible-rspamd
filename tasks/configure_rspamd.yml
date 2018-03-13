@@ -30,3 +30,60 @@
     owner: root
     group: root
     mode: 0644
+
+- name: configure rspamd bayes
+  template:
+    src: classifier-bayes.conf.j2
+    dest: /etc/rspamd/local.d/classifier-bayes.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: configure rspamd headers
+  template:
+    src: milter_headers.conf.j2
+    dest: /etc/rspamd/local.d/milter_headers.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: configure responded emails as non-spam
+  template:
+    src: replies.conf.j2
+    dest: /etc/rspamd/local.d/replies.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: configure blacklist blacklist checks
+  template:
+    src: surbl.conf.j2
+    dest: /etc/rspamd/local.d/surbl.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: add dynamic reputation to certain tlds
+  template:
+    src: url_reputation.conf.j2
+    dest: /etc/rspamd/local.d/url_reputation.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: cache url tags in redis
+  template:
+    src: url_tags.conf.j2
+    dest: /etc/rspamd/local.d/url_tags.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: where to find redis
+  template:
+    src: redis.conf.j2
+    dest: /etc/rspamd/local.d/redis.conf
+    owner: root
+    group: root
+    mode: 0644
+

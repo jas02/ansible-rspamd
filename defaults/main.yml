@@ -2,4 +2,6 @@
 rspamd_password: rspamdpasswd
 rspamd_host: localhost
 rspamd_port: 11333
-
+rspamd_bayes_backend: redis
+rspamd_bayes_server: "127.0.0.1"
+rspamd_redis_server: "127.0.0.1"
