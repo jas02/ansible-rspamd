@@ -1,6 +1,6 @@
 ---
 - name: generate rspamd password
-  shell: /usr/bin/rspamadm -p {{ rspamd_password }} | tail -n 1
+  shell: /usr/bin/rspamadm pw -p {{ rspamd_password }} | tail -n 1
   register: rspamd_controller_pass
 
 - name: debug password
