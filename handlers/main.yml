@@ -1,2 +1,5 @@
 ---
-# handlers file for ansible-rspamd
+- name: restart rspamd
+  systemd:
+    name: rspamd
+    state: restarted
