@@ -1,4 +1,4 @@
-bind_socket = "{{ rspamd_host }}:{{ rspamd_port }}";
+bind_socket = "{{ rspamd_host }}:{{ rspamd_proxy_port }}";
 milter = yes;
 timeout = 120s;
 upstream "local" {
