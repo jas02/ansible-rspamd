@@ -1,2 +1,5 @@
 ---
-# defaults file for ansible-rspamd
+rspamd_password: rspamdpasswd
+rspamd_host: localhost
+rspamd_port: 11333
+

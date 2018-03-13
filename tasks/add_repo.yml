@@ -1,10 +1,10 @@
 ---
-- name: Add an apt rspamd key
+- name: add an apt rspamd key
   apt_key:
     url: https://rspamd.com/apt-stable/gpg.key
     state: present
 
-- name: Add rspamd repository
+- name: add rspamd repository
   apt_repository:
     repo: deb http://rspamd.com/apt-stable/ xenial main
     state: present

@@ -1,3 +1,4 @@
 ---
 - import_tasks: add_repo.yml
 - import_tasks: install_packages.yml
+- import_tasks: configure_rspamd.yml

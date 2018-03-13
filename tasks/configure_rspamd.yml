@@ -1,0 +1,32 @@
+---
+- name: generate rspamd password
+  shell: /usr/bin/rspamd pw -p {{ rspamd_password }} | egrep '^\$'
+  register: rspamd_controller_pass
+
+- name: debug password
+  debug:
+    msg: "passwd: {{ rspamd_controller_pass.stdout }}"
+
+- name: configure rspamd host and port
+  template:
+    src: worker-normal.inc.j2
+    dest: /etc/rspamd/local.d/worker-normal.inc
+    owner: root
+    group: root
+    mode: 0644
+
+- name: configure rspamd proxy
+  template:
+    src: worker-proxy.inc.j2
+    dest: /etc/rspamd/local.d/worker-proxy.inc
+    owner: root
+    group: root
+    mode: 0644
+
+- name: configure rspamd controller
+  template:
+    src: worker-controller.inc.j2
+    dest: /etc/rspamd/local.d/worker-controller.inc
+    owner: root
+    group: root
+    mode: 0644

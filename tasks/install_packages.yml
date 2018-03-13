@@ -1,5 +1,5 @@
 ---
-- name: Install rspamd package
+- name: install rspamd package
   apt:
     name: rspamd
     state: present
