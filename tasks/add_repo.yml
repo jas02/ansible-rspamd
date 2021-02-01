@@ -6,5 +6,5 @@
 
 - name: add rspamd repository
   apt_repository:
-    repo: deb http://rspamd.com/apt-stable/ xenial main
+    repo: deb http://rspamd.com/apt-stable/ {{ ansible_distribution_release }} main
     state: present
