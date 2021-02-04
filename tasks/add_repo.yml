@@ -1,4 +1,9 @@
 ---
+- name: ca-certificates should installed
+  package:
+    name: ca-certificates
+    state: present
+
 - name: add an apt rspamd key
   apt_key:
     url: https://rspamd.com/apt-stable/gpg.key
